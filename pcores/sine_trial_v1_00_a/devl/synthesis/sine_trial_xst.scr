@@ -1,0 +1,12 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn "E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3\pcores\sine_trial_v1_00_a\devl\synthesis\sine_trial_xst.prj"
+-top sine_trial
+-p virtex6
+-ofn "E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3\pcores\sine_trial_v1_00_a\devl\synthesis\sine_trial_xst.ngc"
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /
+-work_lib sine_trial_v1_00_a

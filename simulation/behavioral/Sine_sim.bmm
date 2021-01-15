@@ -1,0 +1,40 @@
+// File: E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3\simulation\behavioral\Sine_sim.bmm
+
+ADDRESS_MAP microblaze_0 MICROBLAZE-LE 100
+	ADDRESS_SPACE microblaze_0_bram_block_combined COMBINED [0x00000000:0x00007fff]
+		ADDRESS_RANGE RAMB16
+		BUS_BLOCK
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_0 [31:30] INPUT = microblaze_0_bram_block_combined_0.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_1 [29:28] INPUT = microblaze_0_bram_block_combined_1.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_2 [27:26] INPUT = microblaze_0_bram_block_combined_2.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_3 [25:24] INPUT = microblaze_0_bram_block_combined_3.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_4 [23:22] INPUT = microblaze_0_bram_block_combined_4.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_5 [21:20] INPUT = microblaze_0_bram_block_combined_5.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_6 [19:18] INPUT = microblaze_0_bram_block_combined_6.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_7 [17:16] INPUT = microblaze_0_bram_block_combined_7.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_8 [15:14] INPUT = microblaze_0_bram_block_combined_8.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_9 [13:12] INPUT = microblaze_0_bram_block_combined_9.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_10 [11:10] INPUT = microblaze_0_bram_block_combined_10.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_11 [9:8] INPUT = microblaze_0_bram_block_combined_11.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_12 [7:6] INPUT = microblaze_0_bram_block_combined_12.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_13 [5:4] INPUT = microblaze_0_bram_block_combined_13.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_14 [3:2] INPUT = microblaze_0_bram_block_combined_14.mem ;
+			microblaze_0_bram_block/microblaze_0_bram_block/ramb16bwer_15 [1:0] INPUT = microblaze_0_bram_block_combined_15.mem ;
+		END_BUS_BLOCK;
+		END_ADDRESS_RANGE;
+	END_ADDRESS_SPACE;
+	ADDRESS_SPACE axi_bram_ctrl_0_bram_block_combined COMBINED [0xc4000000:0xc4003fff]
+		ADDRESS_RANGE RAMB16
+		BUS_BLOCK
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_0 [31:28] INPUT = axi_bram_ctrl_0_bram_block_combined_0.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_1 [27:24] INPUT = axi_bram_ctrl_0_bram_block_combined_1.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_2 [23:20] INPUT = axi_bram_ctrl_0_bram_block_combined_2.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_3 [19:16] INPUT = axi_bram_ctrl_0_bram_block_combined_3.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_4 [15:12] INPUT = axi_bram_ctrl_0_bram_block_combined_4.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_5 [11:8] INPUT = axi_bram_ctrl_0_bram_block_combined_5.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_6 [7:4] INPUT = axi_bram_ctrl_0_bram_block_combined_6.mem ;
+			axi_bram_ctrl_0_bram_block/axi_bram_ctrl_0_bram_block/ramb16bwer_7 [3:0] INPUT = axi_bram_ctrl_0_bram_block_combined_7.mem ;
+		END_BUS_BLOCK;
+		END_ADDRESS_RANGE;
+	END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

@@ -1,0 +1,127 @@
+
+Checking platform configuration ...
+IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 6 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4_0 - 2 master(s) : 2 slave(s) 
+
+Checking port drivers...
+
+Performing Clock DRCs...
+
+Performing Reset DRCs...
+
+Overriding system level properties...
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_i_bram_ctrl -
+   tcl is overriding PARAMETER C_MASK value to 0x40000000 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntl
+   r_v3_10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_d_bram_ctrl -
+   tcl is overriding PARAMETER C_MASK value to 0x40000000 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntl
+   r_v3_10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_D_AXI value to 1 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50
+   _c\data\microblaze_v2_1_0.mpd line 232 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_ADDR_TAG_BITS value to 15 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50
+   _c\data\microblaze_v2_1_0.mpd line 337 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_DCACHE_ADDR_TAG value to 15 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50
+   _c\data\microblaze_v2_1_0.mpd line 367 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_USE_EXT_BRK value to 1 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50
+   _c\data\microblaze_v2_1_0.mpd line 402 
+INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
+   PARAMETER C_USE_EXT_NM_BRK value to 1 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\microblaze_v8_50
+   _c\data\microblaze_v2_1_0.mpd line 403 
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi4lite_0.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4lite_0 - tcl is
+   overriding PARAMETER C_RANGE_CHECK value to 1 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect
+   _v1_06_a\data\axi_interconnect_v2_1_0.mpd line 149 
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi4_0.
+INFO:EDK:4130 - IPNAME: axi_interconnect, INSTANCE:axi4_0 - tcl is overriding
+   PARAMETER C_RANGE_CHECK value to 1 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_interconnect
+   _v1_06_a\data\axi_interconnect_v2_1_0.mpd line 149 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_MEMCLK_PERIOD value to 3333 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 121 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_S0_AXI_STRICT_COHERENCY value to 0 -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 164 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_S1_AXI_REG_EN0 value to 0x0000F -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 176 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_S2_AXI_REG_EN0 value to 0x0000F -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 190 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_S3_AXI_REG_EN0 value to 0x0000F -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 204 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_S4_AXI_REG_EN0 value to 0x0000F -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 218 
+INFO:EDK:4130 - IPNAME: axi_s6_ddrx, INSTANCE:MCB_DDR3 - tcl is overriding
+   PARAMETER C_S5_AXI_REG_EN0 value to 0x0000F -
+   E:\Xilinx\ISE\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_s6_ddrx_v1_0
+   6_a\data\axi_s6_ddrx_v2_1_0.mpd line 232 
+
+Running system level update procedures...
+
+Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
+Invoking MIG ...
+MIG returned 0
+
+Running system level DRCs...
+
+Performing System level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  **             MicroBlaze - microblaze_0
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  ** ICACHE address space [0xC0000000:0xCFFFFFFF] contains an area 
+WARNING:EDK -  ** without assigned addresses [0xC0000000:0xC3FFFFFF] on bus 
+WARNING:EDK -  ** "axi4_0".
+WARNING:EDK -  ****************************************************************
+
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  **             MicroBlaze - microblaze_0
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  ** ICACHE address space [0xC0000000:0xCFFFFFFF] contains an area 
+WARNING:EDK -  ** without assigned addresses [0xC4004000:0xC7FFFFFF] on bus 
+WARNING:EDK -  ** "axi4_0".
+WARNING:EDK -  ****************************************************************
+
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  **             MicroBlaze - microblaze_0
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  ** DCACHE address space [0xC0000000:0xCFFFFFFF] contains an area 
+WARNING:EDK -  ** without assigned addresses [0xC0000000:0xC3FFFFFF] on bus 
+WARNING:EDK -  ** "axi4_0".
+WARNING:EDK -  ****************************************************************
+
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  **             MicroBlaze - microblaze_0
+WARNING:EDK -  ****************************************************************
+WARNING:EDK -  ** DCACHE address space [0xC0000000:0xCFFFFFFF] contains an area 
+WARNING:EDK -  ** without assigned addresses [0xC4004000:0xC7FFFFFF] on bus 
+WARNING:EDK -  ** "axi4_0".
+WARNING:EDK -  ****************************************************************
+
+Conversion to XML complete.

@@ -1,0 +1,28 @@
+Command line:
+   isim_Sine.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59869
+
+Thu Jan 14 11:55:11 2021
+
+
+ Elaboration Time: 1.70313 sec
+
+ Current Memory Usage: 5839.7 Meg
+
+ Total Signals          : 220264
+ Total Nets             : 200515
+ Total Signal Drivers   : 101748
+ Total Blocks           : 27601
+ Total Primitive Blocks : 22261
+ Total Processes        : 121859
+ Total Traceable Variables  : 25760
+ Total Scalar Nets and Variables : 1780170
+
+ Total Simulation Time: 37.1719 sec
+
+ Current Memory Usage: 5384.42 Meg
+
+Thu Jan 14 12:14:10 2021
+

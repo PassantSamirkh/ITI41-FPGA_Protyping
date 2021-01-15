@@ -1,0 +1,4 @@
+vhdl sine_final_v1_00_a "../../hdl/vhdl/sine_gen.vhd"
+vhdl proc_common_v3_00_a "../../../../../../../../../Xilinx/ISE/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd"
+vhdl sine_final_v1_00_a "../../hdl/vhdl/sine_top.vhd"
+vhdl sine_final_v1_00_a "../../hdl/vhdl/user_logic.vhd"

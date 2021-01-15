@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          E:/ITI_references/Digital_IC_course/FPGA_prototype/Project/Final_3/pcores/sine_trial_v1_00_a/data/sine_trial_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Wed Jan 13 22:19:10 2021 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib sine_trial_v1_00_a user_logic vhdl
+lib sine_trial_v1_00_a sine_trial vhdl

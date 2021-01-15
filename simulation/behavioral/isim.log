@@ -1,0 +1,200 @@
+ISim log file
+Running: isim_Sine -gui -tclbatch Sine_setup.tcl 
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+Time resolution is 100 fs
+# proc w  
+  global  tbpath
+  global  PathSeparator
+  puts  "Setting up signal tracing ..."
+  source Sine_wave.tcl
+
+# proc w_top  
+  global  tbpath
+  global  PathSeparator
+  puts  "Setting up signal tracing ..."
+  set id [group add "Top level ports"]
+  source top_level_ports_wave.tcl
+
+# proc w_instance {design_instance_name } 
+  global  tbpath
+  global  PathSeparator
+  puts  "Setting up signal tracing ..."
+  wave add $design_instance_name
+
+# proc ClockSetup  
+  global  tbpath
+  global  PathSeparator
+  puts -nonewline "Setting up clock ... "
+  if { [info exists PathSeparator] } { set ps $PathSeparator } else { set ps "/" }
+  if { ![info exists tbpath] } { set tbpath "${ps}Sine" }
+  isim force add $tbpath${ps}CLK_P 0 -time 0 ns -value 1 -time 2 ns -repeat 5 ns
+  isim force add $tbpath${ps}CLK_N 1 -time 0 ns -value 0 -time 2 ns -repeat 5 ns
+  puts "done"
+
+# proc ResetSetup  
+  global  tbpath
+  global  PathSeparator
+  puts -nonewline "Setting up reset and simulating ... "
+  if { [info exists PathSeparator] } { set ps $PathSeparator } else { set ps "/" }
+  if { ![info exists tbpath] } { set tbpath "${ps}Sine" }
+  isim force add $tbpath${ps}RESET 1 -time 0 ns -value 0 -time 80 ns
+  puts "done"
+
+# proc reset   restart; ClockSetup; ResetSetup; 
+# proc PrintHelpInformation  
+  puts "**********************************************************************"
+  puts "**********************************************************************"
+  puts "***"
+  puts "***   Simulation Setup Macros (Sine_setup.tcl)"
+  puts "***"
+  puts "***   reset =>  Generate clock, toggle reset ports and reset simulation to time 0"
+  puts "***"
+  puts "***   w   =>  set up signal tracing for the ISE Simulator waveform"
+  puts "***           viewer (edit signal lists in Sine_wave.tcl)"
+  puts "***"
+  puts "***   w_top =>  Observe top level signals in the ISim Waveform Viewer"
+  puts "***"
+  puts "***   w_instance <<instance name>>  =>  Observe signals of the given instance in the ISim waveform viewer"
+  puts "***           (Example: w /system/dlm_cntrl to observe signals of dlmb controller)."
+  puts "***"
+  puts "***   h   =>  print this help menu"
+  puts "***"
+  puts "***   Default flow is: w_top; run 1000ns or w; run 1000ns"
+  puts "***"
+  puts "**********************************************************************"
+  puts "**********************************************************************"
+
+# proc h   PrintHelpInformation 
+# puts Setting up simulation commands ...
+# PrintHelpInformation
+# reset
+# run 50us
+Simulator is doing circuit initialization process.
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Decode_I/PC_Module_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Decode_I/PreFetch_Buffer_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Data_Flow_I/ : Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Data_Flow_I/MUL_Unit_I/use_hw_mul/using_dsp48_architectures/dsp_module_I1/using_dsp48a/normal_in_fabric/DSP48A_I1/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/axi_bram_ctrl_0/axi_bram_ctrl_0/gen_axi4/I_FULL_AXI/I_RD_CHNL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/axi_bram_ctrl_0/axi_bram_ctrl_0/gen_axi4/I_FULL_AXI/I_RD_CHNL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 100 ps(2), Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87 ns(14), Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+# run 50us
+Simulator is doing circuit initialization process.
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Decode_I/PC_Module_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Decode_I/PreFetch_Buffer_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Data_Flow_I/ : Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Data_Flow_I/MUL_Unit_I/use_hw_mul/using_dsp48_architectures/dsp_module_I1/using_dsp48a/normal_in_fabric/DSP48A_I1/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/axi_bram_ctrl_0/axi_bram_ctrl_0/gen_axi4/I_FULL_AXI/I_RD_CHNL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/axi_bram_ctrl_0/axi_bram_ctrl_0/gen_axi4/I_FULL_AXI/I_RD_CHNL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 100 ps(2), Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+# reset
+# run 50us
+Simulator is doing circuit initialization process.
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Decode_I/PC_Module_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Decode_I/PreFetch_Buffer_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Data_Flow_I/ : Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_icache/ICache_I1/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+Finished circuit initialization process.
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/Data_Flow_I/MUL_Unit_I/use_hw_mul/using_dsp48_architectures/dsp_module_I1/using_dsp48a/normal_in_fabric/DSP48A_I1/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 0 fs, Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/using_new_cacheinterface_for_axi/Cache_Interface_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/axi_bram_ctrl_0/axi_bram_ctrl_0/gen_axi4/I_FULL_AXI/I_RD_CHNL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 0 fs, Instance /sine/axi_bram_ctrl_0/axi_bram_ctrl_0/gen_axi4/I_FULL_AXI/I_RD_CHNL/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 100 ps(2), Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87 ns(14), Instance /sine/microblaze_0/microblaze_0/MicroBlaze_Core_I/performance/using_dcache/using_writethrough/DCache_I1/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+at 87100 ps(2), Instance /sine/RS232_Uart_1/RS232_Uart_1/UARTLITE_CORE_I/UARTLITE_TX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/ : Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0

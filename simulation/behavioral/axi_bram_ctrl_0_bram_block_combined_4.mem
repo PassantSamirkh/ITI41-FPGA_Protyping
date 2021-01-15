@@ -1,0 +1,15 @@
+// Mem file initialization records.
+//
+// Release 14.6 - Data2MEM P.20131013, build 3.0.10 Apr 3, 2013
+// Copyright (c) 1995-2021 Xilinx, Inc.  All rights reserved.
+//
+// Command: data2mem -bm Sine_sim.bmm -bd E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3\workspace\sine_final_lock\Debug\sine_final_lock.elf tag microblaze_0 -bx E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3\simulation\behavioral -u -p "xc6slx45tfgg484-3"
+//
+// Created on Thursday January 14, 2021 - 06:46:46 am, from:
+//
+//     Map file     - Sine_sim.bmm
+//     Data file(s) - E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3\workspace\sine_final_lock\Debug\sine_final_lock.elf
+//
+// Address space 'microblaze_0.axi_bram_ctrl_0_bram_block_combined', bit lane [15:12].
+//
+// Bus width = 32 bits, number of bus blocks = 1.

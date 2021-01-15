@@ -1,0 +1,15 @@
+#
+# pin constraints
+#
+NET CLK_N LOC = "K22"  |  DIFF_TERM = "TRUE"  |  IOSTANDARD = "LVDS_25";
+NET CLK_P LOC = "K21"  |  DIFF_TERM = "TRUE"  |  IOSTANDARD = "LVDS_25";
+NET RESET LOC = "H8"  |  IOSTANDARD = "LVCMOS15"  |  TIG;
+NET RS232_Uart_1_sin LOC = "H17"  |  IOSTANDARD = "LVCMOS25";
+NET RS232_Uart_1_sout LOC = "B21"  |  IOSTANDARD = "LVCMOS25";
+#
+# additional constraints
+#
+
+NET "CLK" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 200000 kHz;
+

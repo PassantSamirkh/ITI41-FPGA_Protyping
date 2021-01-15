@@ -1,0 +1,9 @@
+-batch 
+-create sine_trial 
+-ver 1.00.a 
+-dir "E:\ITI_references\Digital_IC_course\FPGA_prototype\Project\Final_3" 
+-lang vhdl 
+-bus axi4lite s 
+-reg 5 
+-xps 
+-ise 

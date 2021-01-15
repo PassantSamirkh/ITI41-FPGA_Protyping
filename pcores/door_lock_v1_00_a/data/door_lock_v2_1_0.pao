@@ -1,0 +1,11 @@
+##############################################################################
+## Filename:          E:/ITI_references/Digital_IC_course/FPGA_prototype/Project/Final_3/pcores/door_lock_v1_00_a/data/door_lock_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Thu Jan 14 06:19:37 2021 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib door_lock_v1_00_a user_logic vhdl
+lib door_lock_v1_00_a door_lock vhdl
+lib door_lock_v1_00_a door_lock_final vhdl
